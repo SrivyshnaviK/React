@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="text_1"></div>
+    <div id="text_2"></div>
+    <script type="text/babel">
+        const name = 'Srivyshnavi Koduri'; const element_1 = <h1>Hello, {name}</h1>;
+        ReactDOM.render(
+            element_1,
+            document.getElementById('root')
+        );
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+
+        const user = {
+            firstName: 'Srivyshnavi',
+            lastName: 'Koduri'
+        };
+
+        const element_2 = (
+            <h1>
+                Hiii, {formatName(user)}!  </h1>
+        );
+
+        ReactDOM.render(
+            element_2,
+            document.getElementById('text_1')
+        );
+        function getGreeting(user) {
+            if (user) {
+                return <h1>Hello, {formatName(user)}!</h1>;
+            }
+            return 'Hello, Stranger.';
+        }
+        var use;
+        const element_3 = (
+            <h1>
+                {getGreeting(use)} </h1>
+        );
+
+        ReactDOM.render(
+            element_3,
+            document.getElementById('text_2')
+        );
+    </script>
+
+</body>
+
+</html>
